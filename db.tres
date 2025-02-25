@@ -1,0 +1,9 @@
+extends Resource
+class_name PlayerData
+
+var level = 1
+var used_id = 100
+
+var strength = 5
+var intelligence = 3
+var charisma = 2

@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://coafnoo6of5vn"]
+
+[ext_resource type="Script" path="res://Home.gd" id="1_el6mp"]
+[ext_resource type="Texture2D" uid="uid://pw6ochxwgd5b" path="res://bg/backgroundLogin.png" id="1_m88ti"]
+[ext_resource type="Texture2D" uid="uid://d1yqdmu1wdsqq" path="res://icons/home text.png" id="3_p5ajy"]
+[ext_resource type="Texture2D" uid="uid://bnkceml4cv28v" path="res://buttons/Startbutton.png" id="4_x78ue"]
+[ext_resource type="Texture2D" uid="uid://bvffba1x2qgl2" path="res://buttons/leaderboardbtn.png" id="5_2vdw7"]
+
+[node name="Splash" type="Node2D"]
+position = Vector2(10, 2)
+script = ExtResource("1_el6mp")
+
+[node name="BackgroundLogin" type="Sprite2D" parent="."]
+position = Vector2(576, 335)
+scale = Vector2(0.682287, 0.68125)
+texture = ExtResource("1_m88ti")
+
+[node name="HomeText" type="Sprite2D" parent="."]
+position = Vector2(582, 318)
+scale = Vector2(0.825905, 0.825905)
+texture = ExtResource("3_p5ajy")
+
+[node name="StartBtn" type="Button" parent="."]
+offset_left = 383.0
+offset_top = 382.0
+offset_right = 763.0
+offset_bottom = 483.0
+icon = ExtResource("4_x78ue")
+flat = true
+
+[node name="LeaderBoardbtn" type="Button" parent="."]
+offset_left = 11.0
+offset_top = 13.0
+offset_right = 244.0
+offset_bottom = 97.0
+icon = ExtResource("5_2vdw7")

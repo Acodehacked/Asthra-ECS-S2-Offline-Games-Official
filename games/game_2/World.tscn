@@ -1,0 +1,45 @@
+[gd_scene load_steps=9 format=3 uid="uid://dhnweedrtq81"]
+
+[ext_resource type="Texture2D" uid="uid://cc8n6wnbntwsa" path="res://assets/tiles/platformPack_tile001.png" id="1_6j2yh"]
+[ext_resource type="Texture2D" uid="uid://b6mvtxlnsrpnt" path="res://assets/tiles/platformPack_tile004.png" id="2_uo0ng"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_5wsa1"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_quaur"]
+texture = SubResource("ImageTexture_5wsa1")
+texture_region_size = Vector2i(64, 64)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cojk8"]
+texture_region_size = Vector2i(64, 64)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0xke1"]
+texture = ExtResource("1_6j2yh")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kbxra"]
+texture = ExtResource("2_uo0ng")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="3"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_quaur")
+sources/1 = SubResource("TileSetAtlasSource_cojk8")
+sources/2 = SubResource("TileSetAtlasSource_0xke1")
+sources/3 = SubResource("TileSetAtlasSource_kbxra")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("3")
+format = 2
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(512, 369)
+
+[node name="PointsLabel" type="RichTextLabel" parent="."]
+text = "0"
+
+[node name="StatusLabel" type="RichTextLabel" parent="."]

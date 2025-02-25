@@ -1,0 +1,116 @@
+[gd_scene load_steps=8 format=3 uid="uid://blfiofmjg1yq7"]
+
+[ext_resource type="Script" path="res://LoginPage.gd" id="1_5vegv"]
+[ext_resource type="Texture2D" uid="uid://pw6ochxwgd5b" path="res://bg/backgroundLogin.png" id="2_btp3l"]
+[ext_resource type="FontFile" uid="uid://7hvyfi1enwgp" path="res://fonts/pressStart.ttf" id="3_4gwvp"]
+[ext_resource type="Texture2D" uid="uid://co0abyqn11vxn" path="res://icons/astra.png" id="4_iqu60"]
+[ext_resource type="Texture2D" uid="uid://d1yqdmu1wdsqq" path="res://icons/home text.png" id="5_j44x5"]
+[ext_resource type="Texture2D" uid="uid://bnkceml4cv28v" path="res://buttons/Startbutton.png" id="6_jsaq2"]
+
+[sub_resource type="Theme" id="Theme_e7wb0"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 1.00509)
+script = ExtResource("1_5vegv")
+metadata/_edit_vertical_guides_ = [1000.0]
+
+[node name="BackgroundLogin" type="Sprite2D" parent="."]
+position = Vector2(1001.04, 544.625)
+scale = Vector2(1.13773, 1.08032)
+texture = ExtResource("2_btp3l")
+
+[node name="Container" type="Container" parent="."]
+layout_mode = 0
+offset_left = 625.0
+offset_top = 159.0
+offset_right = 1373.0
+offset_bottom = 922.0
+theme = SubResource("Theme_e7wb0")
+
+[node name="HelpText" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.133
+anchor_top = -5.344
+anchor_right = -0.133
+anchor_bottom = -5.344
+offset_left = 625.216
+offset_top = 3550.91
+offset_right = 830.216
+offset_bottom = 3591.91
+theme_override_fonts/font = ExtResource("3_4gwvp")
+theme_override_font_sizes/font_size = 41
+text = "LOGIN"
+horizontal_alignment = 1
+
+[node name="NameEdit" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 740.0
+offset_top = 196.997
+offset_right = 1272.0
+offset_bottom = 263.997
+theme_override_font_sizes/font_size = 29
+placeholder_text = "Enter your name
+"
+
+[node name="EmailEdit" type="TextEdit" parent="."]
+offset_left = 736.0
+offset_top = 394.99
+offset_right = 1254.0
+offset_bottom = 470.99
+theme_override_font_sizes/font_size = 29
+placeholder_text = "Enter your Email
+"
+
+[node name="PhoneEdit" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 744.0
+offset_top = 296.997
+offset_right = 1262.0
+offset_bottom = 372.997
+theme_override_font_sizes/font_size = 29
+placeholder_text = "Enter your Phone
+"
+
+[node name="Astra" type="Sprite2D" parent="."]
+position = Vector2(1863, 67)
+scale = Vector2(0.235612, 0.235612)
+texture = ExtResource("4_iqu60")
+
+[node name="HomeText" type="Sprite2D" parent="."]
+position = Vector2(160.493, 96.4375)
+scale = Vector2(0.337396, 0.337396)
+texture = ExtResource("5_j44x5")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 812.0
+offset_top = 680.0
+offset_right = 1192.0
+offset_bottom = 781.0
+icon = ExtResource("6_jsaq2")
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 753.0
+offset_top = 586.017
+offset_right = 949.0
+offset_bottom = 625.017
+theme_override_font_sizes/font_size = 28
+text = "Not Logged In!"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 855.0
+offset_top = 90.5392
+offset_right = 1155.0
+offset_bottom = 150.539
+theme_override_fonts/font = ExtResource("3_4gwvp")
+theme_override_font_sizes/font_size = 60
+text = "LOGIN"

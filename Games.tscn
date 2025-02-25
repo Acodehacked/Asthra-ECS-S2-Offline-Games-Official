@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://db3pw5cil1qs5"]
+
+[ext_resource type="Texture2D" uid="uid://dslgtbyyrq1fm" path="res://buttons/HomeBtn.png" id="1_d55it"]
+[ext_resource type="Texture2D" uid="uid://pw6ochxwgd5b" path="res://bg/backgroundLogin.png" id="1_ktxuu"]
+[ext_resource type="Script" path="res://games.gd" id="1_xq07k"]
+[ext_resource type="FontFile" uid="uid://7hvyfi1enwgp" path="res://fonts/pressStart.ttf" id="4_aho58"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xq07k")
+
+[node name="BackgroundLogin" type="Sprite2D" parent="."]
+position = Vector2(993.083, 535.75)
+scale = Vector2(1.11102, 1.03935)
+texture = ExtResource("1_ktxuu")
+
+[node name="HomeButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 853.0
+offset_top = 556.0
+offset_right = 1065.0
+offset_bottom = 616.0
+icon = ExtResource("1_d55it")
+
+[node name="UserTitle" type="Label" parent="."]
+layout_mode = 0
+offset_left = 690.0
+offset_top = 466.0
+offset_right = 1240.0
+offset_bottom = 535.0
+theme_override_fonts/font = ExtResource("4_aho58")
+theme_override_font_sizes/font_size = 50
+text = "ABIN ANTONY"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 862.0
+offset_top = 414.0
+offset_right = 1042.0
+offset_bottom = 441.0
+theme_override_fonts/font = ExtResource("4_aho58")
+theme_override_font_sizes/font_size = 20
+text = "LOGGED IN"
+
+[connection signal="pressed" from="HomeButton" to="." method="_on_home_button_pressed"]
+[connection signal="ready" from="HomeButton" to="." method="_on_button_ready"]

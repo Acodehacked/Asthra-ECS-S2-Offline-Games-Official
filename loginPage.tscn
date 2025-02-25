@@ -1,0 +1,191 @@
+[gd_scene load_steps=9 format=3 uid="uid://blfiofmjg1yq7"]
+
+[ext_resource type="Script" path="res://LoginPage.gd" id="1_5vegv"]
+[ext_resource type="Texture2D" uid="uid://pw6ochxwgd5b" path="res://bg/backgroundLogin.png" id="2_btp3l"]
+[ext_resource type="FontFile" uid="uid://7hvyfi1enwgp" path="res://fonts/pressStart.ttf" id="3_4gwvp"]
+[ext_resource type="Texture2D" uid="uid://co0abyqn11vxn" path="res://icons/astra.png" id="4_iqu60"]
+[ext_resource type="Texture2D" uid="uid://d1yqdmu1wdsqq" path="res://icons/home text.png" id="5_j44x5"]
+[ext_resource type="Texture2D" uid="uid://bnkceml4cv28v" path="res://buttons/Startbutton.png" id="6_jsaq2"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_vko2e"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m5xsn"]
+texture = SubResource("CanvasTexture_vko2e")
+modulate_color = Color(0, 0, 0, 0.560784)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 1.00509)
+script = ExtResource("1_5vegv")
+metadata/_edit_vertical_guides_ = [1000.0, 745.0, 1285.0]
+
+[node name="BackgroundLogin" type="Sprite2D" parent="."]
+position = Vector2(1001.04, 544.625)
+scale = Vector2(1.13773, 1.08032)
+texture = ExtResource("2_btp3l")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 702.0
+offset_top = 135.0
+offset_right = 1329.0
+offset_bottom = 898.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_m5xsn")
+
+[node name="HelpText" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.133
+anchor_top = -5.344
+anchor_right = -0.133
+anchor_bottom = -5.344
+offset_left = 625.216
+offset_top = 3550.91
+offset_right = 830.216
+offset_bottom = 3591.91
+theme_override_fonts/font = ExtResource("3_4gwvp")
+theme_override_font_sizes/font_size = 41
+text = "LOGIN"
+horizontal_alignment = 1
+
+[node name="NameEdit" type="TextEdit" parent="."]
+layout_mode = 2
+offset_left = 748.0
+offset_top = 166.154
+offset_right = 1280.0
+offset_bottom = 233.154
+theme_override_font_sizes/font_size = 29
+placeholder_text = "Enter your name
+"
+
+[node name="PhoneEdit" type="TextEdit" parent="."]
+layout_mode = 2
+offset_left = 746.0
+offset_top = 254.97
+offset_right = 1284.0
+offset_bottom = 323.97
+theme_override_font_sizes/font_size = 29
+placeholder_text = "Enter your Phone
+"
+
+[node name="EmailEdit" type="TextEdit" parent="."]
+layout_mode = 2
+offset_left = 746.0
+offset_top = 344.995
+offset_right = 1284.0
+offset_bottom = 410.995
+theme_override_font_sizes/font_size = 29
+placeholder_text = "Enter your Email"
+
+[node name="CollegeEdit" type="TextEdit" parent="."]
+layout_mode = 2
+offset_left = 747.0
+offset_top = 435.025
+offset_right = 1284.0
+offset_bottom = 497.025
+theme_override_font_sizes/font_size = 29
+placeholder_text = "Enter name of your college / insti."
+
+[node name="StreamEdit" type="TextEdit" parent="."]
+layout_mode = 2
+offset_left = 746.0
+offset_top = 635.0
+offset_right = 1282.0
+offset_bottom = 696.0
+theme_override_font_sizes/font_size = 29
+placeholder_text = "Enter your stream of study"
+
+[node name="YearEdit" type="OptionButton" parent="."]
+layout_mode = 0
+offset_left = 744.0
+offset_top = 552.025
+offset_right = 1283.0
+offset_bottom = 612.025
+theme_override_font_sizes/font_size = 20
+item_count = 5
+popup/item_0/text = "1st year"
+popup/item_0/id = 1
+popup/item_1/text = "2nd year"
+popup/item_1/id = 2
+popup/item_2/text = "3rd year"
+popup/item_2/id = 3
+popup/item_3/text = "4th year"
+popup/item_3/id = 4
+popup/item_4/text = "5th year"
+popup/item_4/id = 5
+
+[node name="Astra" type="Sprite2D" parent="."]
+position = Vector2(1863, 67)
+scale = Vector2(0.235612, 0.235612)
+texture = ExtResource("4_iqu60")
+
+[node name="HomeText" type="Sprite2D" parent="."]
+position = Vector2(160.493, 96.4375)
+scale = Vector2(0.337396, 0.337396)
+texture = ExtResource("5_j44x5")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+offset_left = 809.0
+offset_top = 854.65
+offset_right = 1189.0
+offset_bottom = 955.65
+icon = ExtResource("6_jsaq2")
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 2
+offset_left = 81.0
+offset_top = 965.088
+offset_right = 277.0
+offset_bottom = 1004.09
+theme_override_font_sizes/font_size = 28
+text = "Not Logged In!"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 2
+offset_left = 873.0
+offset_top = 62.681
+offset_right = 1126.0
+offset_bottom = 122.681
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_4gwvp")
+theme_override_font_sizes/font_size = 50
+text = "LOGIN"
+
+[node name="label4" type="Label" parent="."]
+layout_mode = 2
+offset_left = 752.0
+offset_top = 517.366
+offset_right = 1082.0
+offset_bottom = 577.366
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 18
+text = "Select year of study"
+
+[node name="once text" type="Label" parent="."]
+self_modulate = Color(1, 1, 1, 0.701961)
+layout_mode = 2
+offset_left = 745.0
+offset_top = 719.339
+offset_right = 1170.0
+offset_bottom = 779.339
+theme_override_colors/font_color = Color(1, 1, 1, 0.439216)
+theme_override_font_sizes/font_size = 17
+text = "Phone Number & Email can only used once for login"
+
+[node name="ErrorMsg" type="Label" parent="."]
+visible = false
+layout_mode = 2
+offset_left = 752.0
+offset_top = 781.025
+offset_right = 1148.0
+offset_bottom = 841.025
+theme_override_colors/font_color = Color(0.83922, 0.471162, 0.0198347, 1)
+theme_override_fonts/font = ExtResource("3_4gwvp")
+theme_override_font_sizes/font_size = 18
+text = "Network error occured!"

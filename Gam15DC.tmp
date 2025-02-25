@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://db3pw5cil1qs5"]
+
+[ext_resource type="Texture2D" uid="uid://dslgtbyyrq1fm" path="res://buttons/HomeBtn.png" id="1_d55it"]
+[ext_resource type="Texture2D" uid="uid://pw6ochxwgd5b" path="res://bg/backgroundLogin.png" id="1_ktxuu"]
+[ext_resource type="Script" path="res://games.gd" id="1_xq07k"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xq07k")
+
+[node name="BackgroundLogin" type="Sprite2D" parent="."]
+position = Vector2(581.083, 327.25)
+scale = Vector2(0.653241, 0.653241)
+texture = ExtResource("1_ktxuu")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 481.0
+offset_top = 246.0
+offset_right = 693.0
+offset_bottom = 306.0
+icon = ExtResource("1_d55it")
