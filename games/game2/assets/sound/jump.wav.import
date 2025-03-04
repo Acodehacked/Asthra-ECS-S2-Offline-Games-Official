@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dscpg6m666dta"
-path="res://.godot/imported/jump.wav-c8eb752ba01b0a2364b444bd55e6d041.sample"
+path="res://.godot/imported/jump.wav-53796a86535e2cfbb7f5de0151f4b6fc.sample"
 
 [deps]
 
-source_file="res://assets/sound/jump.wav"
-dest_files=["res://.godot/imported/jump.wav-c8eb752ba01b0a2364b444bd55e6d041.sample"]
+source_file="res://games/game2/assets/sound/jump.wav"
+dest_files=["res://.godot/imported/jump.wav-53796a86535e2cfbb7f5de0151f4b6fc.sample"]
 
 [params]
 

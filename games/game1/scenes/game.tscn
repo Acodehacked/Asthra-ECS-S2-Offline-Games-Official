@@ -1,16 +1,27 @@
-[gd_scene load_steps=13 format=3 uid="uid://bxuuwmlma1xmm"]
+[gd_scene load_steps=11 format=3 uid="uid://bxuuwmlma1xmm"]
 
-[ext_resource type="Script" path="res://scripts/game.gd" id="1_15kp8"]
-[ext_resource type="PackedScene" uid="uid://ceuh25br64vvt" path="res://scenes/player.tscn" id="2_oqgyc"]
-[ext_resource type="PackedScene" uid="uid://cmbeb4icp71di" path="res://scenes/diver_enemy.tscn" id="4_7pet0"]
-[ext_resource type="AudioStream" uid="uid://cyyydy05fivsp" path="res://assets/audio/laser.ogg" id="4_8y633"]
-[ext_resource type="PackedScene" uid="uid://cm23pqetbflrq" path="res://scenes/enemy.tscn" id="4_bskam"]
-[ext_resource type="PackedScene" uid="uid://dniho73boedhe" path="res://scenes/hud.tscn" id="4_pq1a5"]
-[ext_resource type="AudioStream" uid="uid://137oamlwx2hu" path="res://assets/audio/hit.wav" id="5_f6dy0"]
-[ext_resource type="PackedScene" uid="uid://c6uejmh8c7koe" path="res://scenes/game_over_screen.tscn" id="5_wfc6m"]
-[ext_resource type="Texture2D" uid="uid://cjqit2q27aiur" path="res://assets/textures/purple.png" id="6_mxb3t"]
-[ext_resource type="AudioStream" uid="uid://b1wymalc4ru36" path="res://assets/audio/explode.wav" id="6_tmg8f"]
-[ext_resource type="Texture2D" uid="uid://dfgo50t0a2vci" path="res://assets/textures/star.png" id="7_p4ya3"]
+[ext_resource type="PackedScene" uid="uid://ceuh25br64vvt" path="res://games/game1/scenes/player.tscn" id="2_oqgyc"]
+[ext_resource type="AudioStream" uid="uid://cyyydy05fivsp" path="res://games/game1/assets/audio/laser.ogg" id="4_8y633"]
+[ext_resource type="PackedScene" uid="uid://dniho73boedhe" path="res://games/game1/scenes/hud.tscn" id="4_pq1a5"]
+[ext_resource type="AudioStream" uid="uid://137oamlwx2hu" path="res://games/game1/assets/audio/hit.wav" id="5_f6dy0"]
+[ext_resource type="PackedScene" uid="uid://c6uejmh8c7koe" path="res://games/game1/scenes/game_over_screen.tscn" id="5_wfc6m"]
+[ext_resource type="Texture2D" uid="uid://cjqit2q27aiur" path="res://games/game1/assets/textures/purple.png" id="6_mxb3t"]
+[ext_resource type="AudioStream" uid="uid://b1wymalc4ru36" path="res://games/game1/assets/audio/explode.wav" id="6_tmg8f"]
+[ext_resource type="Texture2D" uid="uid://dfgo50t0a2vci" path="res://games/game1/assets/textures/star.png" id="7_p4ya3"]
+
+[sub_resource type="GDScript" id="GDScript_kd2kb"]
+script/source = "extends Control
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_owlid"]
 particle_flag_disable_z = true
@@ -23,8 +34,6 @@ initial_velocity_max = -1000.0
 gravity = Vector3(0, 0, 0)
 
 [node name="Game" type="Node2D"]
-script = ExtResource("1_15kp8")
-enemy_scenes = Array[PackedScene]([ExtResource("4_bskam"), ExtResource("4_7pet0")])
 
 [node name="SFX" type="Node" parent="."]
 
@@ -40,6 +49,7 @@ stream = ExtResource("6_tmg8f")
 [node name="UILayer" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="UILayer" instance=ExtResource("4_pq1a5")]
+script = SubResource("GDScript_kd2kb")
 
 [node name="GameOverScreen" parent="UILayer" instance=ExtResource("5_wfc6m")]
 visible = false
@@ -51,13 +61,15 @@ motion_mirroring = Vector2(0, 960)
 
 [node name="PurpleStars" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture_repeat = 2
+position = Vector2(-85, -100)
+scale = Vector2(4.10185, 1.31562)
 texture = ExtResource("6_mxb3t")
 centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 540, 960)
 
 [node name="StarParticleEffect" type="GPUParticles2D" parent="."]
-position = Vector2(270, -50)
+position = Vector2(1011, -86)
 amount = 20
 process_material = SubResource("ParticleProcessMaterial_owlid")
 texture = ExtResource("7_p4ya3")
@@ -69,7 +81,8 @@ wait_time = 2.0
 autostart = true
 
 [node name="Player" parent="." instance=ExtResource("2_oqgyc")]
-position = Vector2(254, 429)
+position = Vector2(1006, 522)
+script = null
 
 [node name="PlayerSpawnPos" type="Marker2D" parent="."]
 position = Vector2(270, 850)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://72p6hkipsrnw"]
 
-[ext_resource type="Script" path="res://scripts/laser.gd" id="1_4v2y7"]
-[ext_resource type="Texture2D" uid="uid://bygq0dc0q4u28" path="res://assets/textures/laserRed01.png" id="1_oib87"]
+[ext_resource type="Script" path="res://games/game1/scripts/laser.gd" id="1_2iexo"]
+[ext_resource type="Texture2D" uid="uid://bygq0dc0q4u28" path="res://games/game1/assets/textures/laserRed01.png" id="1_oib87"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nnupo"]
 radius = 3.0
@@ -10,7 +10,7 @@ height = 44.0
 [node name="Laser" type="Area2D"]
 collision_layer = 4
 collision_mask = 2
-script = ExtResource("1_4v2y7")
+script = ExtResource("1_2iexo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -22)

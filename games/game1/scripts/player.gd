@@ -8,7 +8,7 @@ signal killed
 
 @onready var muzzle = $Muzzle
 
-var laser_scene = preload("res://scenes/laser.tscn")
+var laser_scene = preload("res://games/game1/scenes/laser.tscn")
 
 var shoot_cd := false
 
