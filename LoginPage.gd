@@ -12,7 +12,7 @@ func _ready() -> void:
 	Firebase.Auth.signup_failed.connect(_on_signup_succeeded)
 	Firebase.Auth.signup_succeeded.connect(_on_signup_succeeded)
 	Firebase.Auth.login_succeeded.connect(_on_login_succeeded)
-	#Firebase.Auth.login_failed.connect(_on_login_succeeded)
+	Firebase.Auth.login_failed.connect(_on_login_failed)
 
 func _on_login():
 	var name = $NameEdit.text.strip_edges()
@@ -117,7 +117,7 @@ func anonymous_login():
 	var email = $EmailEdit.text
 	var password = "Player@2s025#2"  # Ensure this meets Firebase's password requirements
 	
-	var task = Firebase.Auth.signup_with_email_and_password(email, password)
+	var task = await Firebase.Auth.signup_with_email_and_password(email, password)
 	if task != null:
 		$ErrorMsg.hide()
 		print("Signup successful! UID: ", task.user["localid"])
@@ -131,13 +131,20 @@ func _on_signup_succeeded(user_info):
 	$Label2.text = 'Signup Success. Logging in..'
 	print(user_info)
 	var user_data = UserData.load_or_create()
-	user_data.user_id = user_info["localid"]  # Firebase UID
+	user_data.user_id = user_info["localid"] 
+	user_data.name = $NameEdit.text
+	user_data.score = 0
 	user_data.save()
 	$Label2.text = 'User Saving..'
 	print("User ID saved: ", user_data.user_id)
-	var task =  Firebase.Auth.login_with_email_and_password(user_info['email'],'Player@2025#2')
+	var task =  Firebase.Auth.login_anonymous()
+	set_error("")
 	$Label2.text = 'Setting Games...'
-	
+	Firebase.Auth.save_auth(user_info)
+	save_data()
+	#user_info['email'],'Player@2025#2'/
+func _on_login_failed(error):
+	print("login failed",error)#
 
 func _on_signup_failed(error):
 	print("signup failed: ", error)
@@ -145,8 +152,7 @@ func _on_signup_failed(error):
 func _on_login_succeeded(auth):
 	$Label2.text = 'Loading...'
 	print("Login successful!")
-	Firebase.Auth.save_auth(auth)
-	save_data()
+	
 		
 
 

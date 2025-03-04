@@ -2,6 +2,8 @@ extends Resource
 class_name UserData
 
 @export var user_id: String = ""
+@export var name: String = ""
+@export var score: int = 0
 
 # Set a unique resource path so it can be saved
 const SAVE_PATH = "user://user_data.tres"

@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://db3pw5cil1qs5"]
+[gd_scene load_steps=9 format=3 uid="uid://db3pw5cil1qs5"]
 
 [ext_resource type="Texture2D" uid="uid://dslgtbyyrq1fm" path="res://buttons/HomeBtn.png" id="1_d55it"]
 [ext_resource type="Texture2D" uid="uid://pw6ochxwgd5b" path="res://bg/backgroundLogin.png" id="1_ktxuu"]
 [ext_resource type="Script" path="res://games.gd" id="1_xq07k"]
 [ext_resource type="FontFile" uid="uid://7hvyfi1enwgp" path="res://fonts/pressStart.ttf" id="4_aho58"]
+[ext_resource type="Texture2D" uid="uid://cp02bjj6rxkx" path="res://icons/game_4.png" id="5_4pklv"]
+[ext_resource type="Texture2D" uid="uid://6taijivtenas" path="res://icons/game_2.png" id="6_xhoqc"]
+[ext_resource type="Texture2D" uid="uid://qshmanv6bu67" path="res://icons/game_3.png" id="7_1kt7o"]
+[ext_resource type="Texture2D" uid="uid://csvvggapoxb3k" path="res://icons/game_1.png" id="8_6gkpd"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -13,6 +17,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xq07k")
+metadata/_edit_horizontal_guides_ = [254.0, 703.0]
 
 [node name="BackgroundLogin" type="Sprite2D" parent="."]
 position = Vector2(993.083, 535.75)
@@ -21,31 +26,51 @@ texture = ExtResource("1_ktxuu")
 
 [node name="HomeButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 853.0
-offset_top = 556.0
-offset_right = 1065.0
-offset_bottom = 616.0
+offset_left = 60.0
+offset_top = 991.0
+offset_right = 272.0
+offset_bottom = 1051.0
 icon = ExtResource("1_d55it")
 
 [node name="UserTitle" type="Label" parent="."]
 layout_mode = 0
-offset_left = 690.0
-offset_top = 466.0
-offset_right = 1240.0
-offset_bottom = 535.0
+offset_left = 1740.0
+offset_top = 33.0
+offset_right = 1960.0
+offset_bottom = 57.0
 theme_override_fonts/font = ExtResource("4_aho58")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 20
 text = "ABIN ANTONY"
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 862.0
-offset_top = 414.0
-offset_right = 1042.0
-offset_bottom = 441.0
+offset_left = 1869.0
+offset_top = 16.0
+offset_right = 2049.0
+offset_bottom = 43.0
 theme_override_fonts/font = ExtResource("4_aho58")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 10
 text = "LOGGED IN"
+
+[node name="Game1button4" type="TouchScreenButton" parent="."]
+position = Vector2(1266, 61)
+scale = Vector2(1.23317, 1.23317)
+texture_normal = ExtResource("5_4pklv")
+
+[node name="Game1button3" type="TouchScreenButton" parent="."]
+position = Vector2(380, 68.8555)
+scale = Vector2(1.18883, 1.18883)
+texture_normal = ExtResource("6_xhoqc")
+
+[node name="Game1button2" type="TouchScreenButton" parent="."]
+position = Vector2(834, 70.8226)
+scale = Vector2(1.18883, 1.18883)
+texture_normal = ExtResource("7_1kt7o")
+
+[node name="Game1button" type="TouchScreenButton" parent="."]
+position = Vector2(-79, 65)
+scale = Vector2(1.20115, 1.20115)
+texture_normal = ExtResource("8_6gkpd")
 
 [connection signal="pressed" from="HomeButton" to="." method="_on_home_button_pressed"]
 [connection signal="ready" from="HomeButton" to="." method="_on_button_ready"]
