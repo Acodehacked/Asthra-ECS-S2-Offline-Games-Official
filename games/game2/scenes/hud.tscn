@@ -23,16 +23,29 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -267.0
-offset_top = -262.0
-offset_right = 270.0
-offset_bottom = -208.0
+offset_left = -277.0
+offset_top = -290.0
+offset_right = 300.0
+offset_bottom = 221.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.811285, 0.827139, 3.85046e-07, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_xwrdd")
 theme_override_font_sizes/font_size = 20
-text = "Instructions"
+text = "Dino Jump - How to Play
+
+Tap / Press Spacebar – Jump over obstacles.
+
+Press Down Arrow – Descend faster.
+
+The dino runs automatically.
+
+The game speeds up over time.
+
+Hitting an obstacle ends the game.
+
+
+Go for the highest score!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -67,6 +80,7 @@ offset_right = 269.0
 offset_bottom = 301.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.891405, 0.832238, 1.54018e-06, 1)
 theme_override_fonts/font = ExtResource("1_xwrdd")
 theme_override_font_sizes/font_size = 40
 text = "PRESS SPACE TO PLAY"
