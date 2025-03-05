@@ -7,7 +7,7 @@ var barrel_scene = preload("res://games/game2/scenes/barrel.tscn")
 var bird_scene = preload("res://games/game2/scenes/bird.tscn")
 var obstacle_types := [stump_scene, rock_scene, barrel_scene]
 var obstacles : Array
-var bird_heights := [500, 690]
+var bird_heights := [600, 690]
 
 # Game variables
 const DINO_START_POS := Vector2i(349, 845)
@@ -34,6 +34,7 @@ func _ready():
 	new_game()
 	var user_data = UserData.load_or_create()
 	$HUD.get_node("UserNameLabel").text = user_data.name
+	high_score = user_data.game_1
 
 func new_game():
 	# Reset variables
@@ -79,7 +80,7 @@ func _process(delta):
 		$Camera2D.position.x += movement  # Ensure they move at the same speed
 		
 		# Update score
-		score += speed / 5
+		score += (speed / 5)
 		show_score()
 		
 		# Update ground position
@@ -141,9 +142,11 @@ func show_score():
 	$HUD.get_node("ScoreLabel").text = "SCORE: " + str(score / SCORE_MODIFIER)
 
 func check_high_score():
+	var user_data = UserData.load_or_create()
 	if score > high_score:
-		high_score = score
-		$HUD.get_node("HighScoreLabel").text = "HIGH SCORE: " + str(high_score / SCORE_MODIFIER)
+		high_score = score / SCORE_MODIFIER
+		user_data.game_1 = high_score
+		$HUD.get_node("HighScoreLabel").text = "HIGH SCORE: " + str(high_score)
 
 func adjust_difficulty():
 	difficulty = score / 5000

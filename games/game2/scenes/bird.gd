@@ -8,5 +8,5 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	position.x -= get_parent().speed / 6.5
+	position.x -= get_parent().speed / 5
 #

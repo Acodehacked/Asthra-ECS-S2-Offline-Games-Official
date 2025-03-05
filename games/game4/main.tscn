@@ -1,0 +1,71 @@
+[gd_scene load_steps=6 format=3 uid="uid://dwnlhehm8xsgx"]
+
+[ext_resource type="Script" path="res://games/game4/main.gd" id="1_3g016"]
+[ext_resource type="PackedScene" uid="uid://b806fg5jrllc6" path="res://games/game4/hud.tscn" id="2_er2po"]
+[ext_resource type="PackedScene" uid="uid://cg1dgbw8swbhv" path="res://games/game4/game_over.tscn" id="3_pvsje"]
+[ext_resource type="Texture2D" uid="uid://pw6ochxwgd5b" path="res://bg/backgroundLogin.png" id="4_bj0cu"]
+[ext_resource type="Texture2D" uid="uid://cedghsgsx0mia" path="res://buttons/continueButton.png" id="5_naegd"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_3g016")
+metadata/_edit_vertical_guides_ = [666.0, 1391.0]
+
+[node name="Hud" parent="." instance=ExtResource("2_er2po")]
+visible = false
+
+[node name="GameOver" parent="." instance=ExtResource("3_pvsje")]
+visible = false
+
+[node name="BackgroundLogin" type="Sprite2D" parent="."]
+position = Vector2(977.5, 554)
+scale = Vector2(1.095, 1.04444)
+texture = ExtResource("4_bj0cu")
+
+[node name="QuestionLabel" type="Label" parent="."]
+offset_left = 587.0
+offset_top = 283.0
+offset_right = 1386.0
+offset_bottom = 391.0
+theme_override_font_sizes/font_size = 50
+text = "WHAT IS COMPUTER?"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Option1" type="Button" parent="."]
+offset_left = 524.0
+offset_top = 426.0
+offset_right = 1463.0
+offset_bottom = 511.0
+theme_override_font_sizes/font_size = 40
+text = "SIMPLE ONE"
+
+[node name="Option2" type="Button" parent="."]
+offset_left = 524.0
+offset_top = 537.0
+offset_right = 1463.0
+offset_bottom = 622.0
+theme_override_font_sizes/font_size = 40
+text = "SIMPLE ONE"
+
+[node name="Option3" type="Button" parent="."]
+offset_left = 524.0
+offset_top = 646.0
+offset_right = 1463.0
+offset_bottom = 731.0
+theme_override_font_sizes/font_size = 40
+text = "SIMPLE ONE"
+
+[node name="Option4" type="Button" parent="."]
+offset_left = 524.0
+offset_top = 762.0
+offset_right = 1463.0
+offset_bottom = 847.0
+theme_override_font_sizes/font_size = 40
+text = "SIMPLE ONE"
+
+[node name="NextButton" type="Button" parent="."]
+offset_left = 1135.0
+offset_top = 892.0
+offset_right = 1447.0
+offset_bottom = 980.0
+icon = ExtResource("5_naegd")

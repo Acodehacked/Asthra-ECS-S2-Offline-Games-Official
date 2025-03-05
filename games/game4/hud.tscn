@@ -1,21 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://lyf4a3sklk1o"]
+[gd_scene load_steps=4 format=3 uid="uid://b806fg5jrllc6"]
 
-[ext_resource type="FontFile" uid="uid://s15272omc2m3" path="res://games/game2/assets/fonts/retro.ttf" id="1_xwrdd"]
+[ext_resource type="FontFile" uid="uid://s15272omc2m3" path="res://games/game2/assets/fonts/retro.ttf" id="1_evkr0"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_3v42g"]
+[sub_resource type="CanvasTexture" id="CanvasTexture_ckarq"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_trne6"]
-texture = SubResource("CanvasTexture_3v42g")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ic0wx"]
+texture = SubResource("CanvasTexture_ckarq")
 modulate_color = Color(0, 0, 0, 0.560784)
 
-[node name="HUD" type="CanvasLayer"]
+[node name="Hud" type="Node2D"]
 
 [node name="Useless0" type="Panel" parent="."]
 offset_left = 652.0
 offset_top = 153.0
 offset_right = 1342.0
 offset_bottom = 904.0
-theme_override_styles/panel = SubResource("StyleBoxTexture_trne6")
+theme_override_styles/panel = SubResource("StyleBoxTexture_ic0wx")
 
 [node name="Useless1" type="Label" parent="."]
 anchors_preset = 8
@@ -23,14 +23,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -267.0
-offset_top = -262.0
-offset_right = 270.0
-offset_bottom = -208.0
+offset_left = 731.0
+offset_top = 284.0
+offset_right = 1268.0
+offset_bottom = 338.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.811285, 0.827139, 3.85046e-07, 1)
-theme_override_fonts/font = ExtResource("1_xwrdd")
+theme_override_fonts/font = ExtResource("1_evkr0")
 theme_override_font_sizes/font_size = 20
 text = "Instructions"
 horizontal_alignment = 1
@@ -42,14 +42,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -270.0
-offset_top = -330.0
-offset_right = 267.0
-offset_bottom = -276.0
+offset_left = 731.0
+offset_top = 190.0
+offset_right = 1268.0
+offset_bottom = 244.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.811285, 0.827139, 3.85046e-07, 1)
-theme_override_fonts/font = ExtResource("1_xwrdd")
+theme_override_fonts/font = ExtResource("1_evkr0")
 theme_override_font_sizes/font_size = 20
 text = "Instructions"
 horizontal_alignment = 1
@@ -61,24 +61,24 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -268.0
-offset_top = 247.0
-offset_right = 269.0
-offset_bottom = 301.0
+offset_left = 730.0
+offset_top = 810.0
+offset_right = 1267.0
+offset_bottom = 864.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("1_xwrdd")
+theme_override_fonts/font = ExtResource("1_evkr0")
 theme_override_font_sizes/font_size = 40
 text = "PRESS SPACE TO PLAY"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ScoreLabel" type="Label" parent="."]
-offset_left = 34.0
-offset_top = 17.0
-offset_right = 217.0
-offset_bottom = 71.0
-theme_override_fonts/font = ExtResource("1_xwrdd")
+offset_left = 54.0
+offset_top = 40.0
+offset_right = 237.0
+offset_bottom = 94.0
+theme_override_fonts/font = ExtResource("1_evkr0")
 theme_override_font_sizes/font_size = 40
 text = "SCORE: "
 horizontal_alignment = 1
@@ -88,12 +88,12 @@ vertical_alignment = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -107.0
-offset_top = 52.0
-offset_right = -27.0
-offset_bottom = 83.0
+offset_left = 1842.0
+offset_top = 55.0
+offset_right = 1922.0
+offset_bottom = 106.0
 grow_horizontal = 0
-theme_override_fonts/font = ExtResource("1_xwrdd")
+theme_override_fonts/font = ExtResource("1_evkr0")
 theme_override_font_sizes/font_size = 40
 text = "-"
 horizontal_alignment = 2
@@ -102,12 +102,12 @@ horizontal_alignment = 2
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -109.0
-offset_top = 22.0
-offset_right = -29.0
-offset_bottom = 53.0
+offset_left = 1851.0
+offset_top = 25.0
+offset_right = 1931.0
+offset_bottom = 56.0
 grow_horizontal = 0
-theme_override_fonts/font = ExtResource("1_xwrdd")
+theme_override_fonts/font = ExtResource("1_evkr0")
 theme_override_font_sizes/font_size = 20
 text = "user"
 horizontal_alignment = 1

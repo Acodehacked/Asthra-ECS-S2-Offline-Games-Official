@@ -12,7 +12,7 @@ config_version=5
 
 config/name="ECS GAME"
 config/version="1.0"
-run/main_scene="res://Home.tscn"
+run/main_scene="res://games/game4/main.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 boot_splash/bg_color=Color(0.0408328, 0.0383499, 0.0320799, 1)
 boot_splash/show_image=false
@@ -24,6 +24,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Firebase="*res://addons/godot-firebase/firebase/firebase.tscn"
+Timer_Manager="*res://Time_Manager.gd"
 
 [display]
 
