@@ -7,10 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://d1yqdmu1wdsqq" path="res://icons/home text.png" id="5_j44x5"]
 [ext_resource type="Texture2D" uid="uid://bnkceml4cv28v" path="res://buttons/Startbutton.png" id="6_jsaq2"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_vko2e"]
+[sub_resource type="CanvasTexture" id="CanvasTexture_me40b"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m5xsn"]
-texture = SubResource("CanvasTexture_vko2e")
+texture = SubResource("CanvasTexture_me40b")
 modulate_color = Color(0, 0, 0, 0.560784)
 
 [node name="Control" type="Control"]

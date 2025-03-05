@@ -54,6 +54,9 @@ func new_game():
 	
 	# Reset HUD and game over screen
 	$HUD.get_node("StartLabel").show()
+	$HUD.get_node("Useless0").show()
+	$HUD.get_node("Useless1").show()
+	$HUD.get_node("Useless1").show()
 	$GameOver.hide()
 
 # Called every frame
@@ -74,7 +77,7 @@ func _process(delta):
 		$Camera2D.position.x += movement  # Ensure they move at the same speed
 		
 		# Update score
-		score += speed / 4
+		score += speed / 5
 		show_score()
 		
 		# Update ground position
@@ -91,6 +94,9 @@ func _process(delta):
 
 func start_game():
 	game_running = true
+	$HUD.get_node("Useless0").hide()
+	$HUD.get_node("Useless1").hide()
+	$HUD.get_node("Useless2").hide()
 	$HUD.get_node("StartLabel").hide()
 
 func generate_obs():
