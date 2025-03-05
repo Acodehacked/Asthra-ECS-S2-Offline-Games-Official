@@ -7,7 +7,7 @@ var barrel_scene = preload("res://games/game2/scenes/barrel.tscn")
 var bird_scene = preload("res://games/game2/scenes/bird.tscn")
 var obstacle_types := [stump_scene, rock_scene, barrel_scene]
 var obstacles : Array
-var bird_heights := [200, 390]
+var bird_heights := [500, 690]
 
 # Game variables
 const DINO_START_POS := Vector2i(349, 845)
@@ -19,8 +19,8 @@ const SCORE_MODIFIER : int = 30
 var high_score : int
 var speed : float
 const START_SPEED : float = 5.0
-const MAX_SPEED : int = 16
-const SPEED_MODIFIER : int = 50000
+const MAX_SPEED : int = 10.0
+const SPEED_MODIFIER : int = 20000
 var screen_size : Vector2i
 var ground_height : int
 var game_running : bool = false  # Ensure it starts as false
@@ -32,6 +32,8 @@ func _ready():
 	ground_height = $Ground.get_node("Sprite2D").texture.get_height()
 	$GameOver.get_node("Button").pressed.connect(new_game)
 	new_game()
+	var user_data = UserData.load_or_create()
+	$HUD.get_node("UserNameLabel").text = user_data.name
 
 func new_game():
 	# Reset variables
@@ -100,16 +102,17 @@ func start_game():
 	$HUD.get_node("StartLabel").hide()
 
 func generate_obs():
-	if obstacles.is_empty() or last_obs.position.x < score + randi_range(300, 500):
+	if obstacles.is_empty() or last_obs.position.x < score + randi_range(0, 300):
 		var obs_type = obstacle_types[randi() % obstacle_types.size()]
 		var obs
 		var max_obs = difficulty + 1
 		for i in range(randi() % max_obs + 1):
 			obs = obs_type.instantiate()
 			var obs_height = obs.get_node("Sprite2D").texture.get_height()
-			var obs_scale = obs.get_node("Sprite2D").scale
+			#var obs_scale = obs.get_node("Sprite2D").scale
+			var obs_scale = 1.8
 			var obs_x : int = screen_size.x + score + 100 + (i * 100)
-			var obs_y : int = screen_size.y - (ground_height*1.2) - (obs_height * obs_scale.y / 2) + 5
+			var obs_y : int = screen_size.y - (ground_height*1.2) - (obs_height * 2) + 10
 			last_obs = obs
 			add_obs(obs, obs_x, obs_y)
 		# Additionally random chance to spawn a bird
@@ -143,7 +146,8 @@ func check_high_score():
 		$HUD.get_node("HighScoreLabel").text = "HIGH SCORE: " + str(high_score / SCORE_MODIFIER)
 
 func adjust_difficulty():
-	difficulty = score / SPEED_MODIFIER
+	difficulty = score / 5000
+	print(difficulty)
 	if difficulty > MAX_DIFFICULTY:
 		difficulty = MAX_DIFFICULTY
 
