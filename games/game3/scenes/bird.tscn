@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://b6xt1pam4caki"]
 
-[ext_resource type="Script" path="res://scenes/bird.gd" id="1_jmxwj"]
-[ext_resource type="Texture2D" uid="uid://dfuofh4nwer0n" path="res://assets/bird1.png" id="2_cjltx"]
-[ext_resource type="Texture2D" uid="uid://533ubvnyvpxe" path="res://assets/bird2.png" id="3_rt77f"]
-[ext_resource type="Texture2D" uid="uid://cb3fw6j2c364v" path="res://assets/bird3.png" id="4_h1qdy"]
+[ext_resource type="Script" path="res://games/game3/scenes/bird.gd" id="1_jmxwj"]
+[ext_resource type="Texture2D" uid="uid://dfuofh4nwer0n" path="res://games/game3/assets/bird1.png" id="2_cjltx"]
+[ext_resource type="Texture2D" uid="uid://533ubvnyvpxe" path="res://games/game3/assets/bird2.png" id="3_rt77f"]
+[ext_resource type="Texture2D" uid="uid://cb3fw6j2c364v" path="res://games/game3/assets/bird3.png" id="4_h1qdy"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xn4pq"]
 animations = [{
@@ -27,6 +27,7 @@ radius = 18.0
 height = 52.0
 
 [node name="Bird" type="CharacterBody2D"]
+scale = Vector2(2, 2)
 script = ExtResource("1_jmxwj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

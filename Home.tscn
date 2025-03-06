@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://coafnoo6of5vn"]
+[gd_scene load_steps=9 format=3 uid="uid://coafnoo6of5vn"]
 
 [ext_resource type="Script" path="res://Home.gd" id="1_el6mp"]
 [ext_resource type="Texture2D" uid="uid://cdx81ntwxoexe" path="res://bg/backgroundHero.png" id="2_kbgkd"]
@@ -6,6 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://bnkceml4cv28v" path="res://buttons/Startbutton.png" id="4_x78ue"]
 [ext_resource type="Texture2D" uid="uid://bvffba1x2qgl2" path="res://buttons/leaderboardbtn.png" id="5_2vdw7"]
 [ext_resource type="Texture2D" uid="uid://d3x22p7dp1ln7" path="res://icons/collegeLogo.png" id="6_fxg4e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_irk3n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ojrm5"]
 
 [node name="Splash" type="Node2D"]
 position = Vector2(10, 2)
@@ -23,10 +27,12 @@ scale = Vector2(1.48061, 1.39041)
 texture = ExtResource("3_p5ajy")
 
 [node name="StartBtn" type="Button" parent="."]
-offset_left = 781.0
+offset_left = 786.0
 offset_top = 635.0
-offset_right = 1165.0
+offset_right = 1166.0
 offset_bottom = 737.0
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_irk3n")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ojrm5")
 icon = ExtResource("4_x78ue")
 flat = true
 text_overrun_behavior = 1
@@ -34,6 +40,7 @@ autowrap_mode = 1
 clip_text = true
 
 [node name="LeaderBoardbtn" type="Button" parent="."]
+visible = false
 offset_left = 11.0
 offset_top = 13.0
 offset_right = 244.0

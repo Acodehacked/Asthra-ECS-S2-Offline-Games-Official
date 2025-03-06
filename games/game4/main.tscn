@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dwnlhehm8xsgx"]
+[gd_scene load_steps=7 format=3 uid="uid://dwnlhehm8xsgx"]
 
 [ext_resource type="Script" path="res://games/game4/main.gd" id="1_3g016"]
 [ext_resource type="PackedScene" uid="uid://b806fg5jrllc6" path="res://games/game4/hud.tscn" id="2_er2po"]
 [ext_resource type="PackedScene" uid="uid://cg1dgbw8swbhv" path="res://games/game4/game_over.tscn" id="3_pvsje"]
+[ext_resource type="FontFile" uid="uid://bthy27s5k0hii" path="res://fonts/SourceCode.ttf" id="3_vqmfn"]
 [ext_resource type="Texture2D" uid="uid://pw6ochxwgd5b" path="res://bg/backgroundLogin.png" id="4_bj0cu"]
 [ext_resource type="Texture2D" uid="uid://cedghsgsx0mia" path="res://buttons/continueButton.png" id="5_naegd"]
 
@@ -10,62 +11,91 @@
 script = ExtResource("1_3g016")
 metadata/_edit_vertical_guides_ = [666.0, 1391.0]
 
-[node name="Hud" parent="." instance=ExtResource("2_er2po")]
-visible = false
-
-[node name="GameOver" parent="." instance=ExtResource("3_pvsje")]
-visible = false
-
 [node name="BackgroundLogin" type="Sprite2D" parent="."]
 position = Vector2(977.5, 554)
 scale = Vector2(1.095, 1.04444)
 texture = ExtResource("4_bj0cu")
 
 [node name="QuestionLabel" type="Label" parent="."]
-offset_left = 587.0
-offset_top = 283.0
-offset_right = 1386.0
-offset_bottom = 391.0
+offset_left = 75.0
+offset_top = 166.0
+offset_right = 1751.0
+offset_bottom = 335.0
 theme_override_font_sizes/font_size = 50
 text = "WHAT IS COMPUTER?"
-horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="CodeTypeLabel" type="Label" parent="."]
+offset_left = 73.0
+offset_top = 139.0
+offset_right = 791.0
+offset_bottom = 172.0
+theme_override_colors/font_color = Color(1, 0.466918, 0.490507, 1)
+theme_override_fonts/font = ExtResource("3_vqmfn")
+theme_override_font_sizes/font_size = 20
+text = "Javascript"
+autowrap_mode = 3
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 78.0
+offset_top = 363.0
+offset_right = 799.0
+offset_bottom = 931.0
+
+[node name="CodeLabel" type="Label" parent="."]
+offset_left = 138.0
+offset_top = 394.0
+offset_right = 748.0
+offset_bottom = 607.0
+theme_override_colors/font_color = Color(0.864002, 0.914066, 0.888424, 1)
+theme_override_fonts/font = ExtResource("3_vqmfn")
+theme_override_font_sizes/font_size = 37
+text = "#include<stdio.h>
+int main(){
+}"
 autowrap_mode = 3
 
 [node name="Option1" type="Button" parent="."]
-offset_left = 524.0
-offset_top = 426.0
-offset_right = 1463.0
-offset_bottom = 511.0
+offset_left = 842.0
+offset_top = 369.0
+offset_right = 1781.0
+offset_bottom = 454.0
 theme_override_font_sizes/font_size = 40
 text = "SIMPLE ONE"
 
 [node name="Option2" type="Button" parent="."]
-offset_left = 524.0
-offset_top = 537.0
-offset_right = 1463.0
-offset_bottom = 622.0
+offset_left = 842.0
+offset_top = 480.0
+offset_right = 1781.0
+offset_bottom = 565.0
 theme_override_font_sizes/font_size = 40
 text = "SIMPLE ONE"
 
 [node name="Option3" type="Button" parent="."]
-offset_left = 524.0
-offset_top = 646.0
-offset_right = 1463.0
-offset_bottom = 731.0
+offset_left = 842.0
+offset_top = 589.0
+offset_right = 1781.0
+offset_bottom = 674.0
 theme_override_font_sizes/font_size = 40
 text = "SIMPLE ONE"
 
 [node name="Option4" type="Button" parent="."]
-offset_left = 524.0
-offset_top = 762.0
-offset_right = 1463.0
-offset_bottom = 847.0
+offset_left = 842.0
+offset_top = 705.0
+offset_right = 1781.0
+offset_bottom = 790.0
 theme_override_font_sizes/font_size = 40
 text = "SIMPLE ONE"
 
 [node name="NextButton" type="Button" parent="."]
-offset_left = 1135.0
-offset_top = 892.0
-offset_right = 1447.0
-offset_bottom = 980.0
+offset_left = 1492.0
+offset_top = 868.0
+offset_right = 1804.0
+offset_bottom = 956.0
 icon = ExtResource("5_naegd")
+
+[node name="Hud" parent="." instance=ExtResource("2_er2po")]
+
+[node name="GameOver" parent="." instance=ExtResource("3_pvsje")]
+
+[connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]

@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://cyme82fovl1nw"]
+
+[ext_resource type="Script" path="res://time_out.gd" id="1_tw0d5"]
+[ext_resource type="Texture2D" uid="uid://cdx81ntwxoexe" path="res://bg/backgroundHero.png" id="2_uo0kk"]
+[ext_resource type="FontFile" uid="uid://7hvyfi1enwgp" path="res://fonts/pressStart.ttf" id="3_tv0bs"]
+[ext_resource type="LabelSettings" uid="uid://dgawcdi6iwufa" path="res://SimpleTextStyle.tres" id="4_nvl48"]
+[ext_resource type="Texture2D" uid="uid://dslgtbyyrq1fm" path="res://buttons/HomeBtn.png" id="5_ocjig"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vbajc"]
+font = ExtResource("3_tv0bs")
+font_size = 80
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hla7n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e4ekd"]
+
+[node name="TimOut" type="Node2D"]
+script = ExtResource("1_tw0d5")
+metadata/_edit_vertical_guides_ = [997.0]
+
+[node name="BackgroundHero" type="Sprite2D" parent="."]
+position = Vector2(1006, 531)
+scale = Vector2(1.14833, 1.06852)
+texture = ExtResource("2_uo0kk")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 351.0
+offset_top = 289.0
+offset_right = 1631.0
+offset_bottom = 527.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 90
+text = "YOUR TIME IS UP!"
+label_settings = SubResource("LabelSettings_vbajc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 355.0
+offset_top = 514.0
+offset_right = 1660.0
+offset_bottom = 752.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 90
+text = "Your Account is automatically logged out"
+label_settings = ExtResource("4_nvl48")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Home" type="Button" parent="."]
+offset_left = 787.0
+offset_top = 765.0
+offset_right = 999.0
+offset_bottom = 825.0
+scale = Vector2(2, 2)
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_hla7n")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_e4ekd")
+icon = ExtResource("5_ocjig")
+
+[connection signal="pressed" from="Home" to="." method="_on_home_pressed"]

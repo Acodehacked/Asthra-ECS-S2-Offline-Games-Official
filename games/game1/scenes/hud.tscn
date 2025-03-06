@@ -1,10 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://dniho73boedhe"]
+[gd_scene load_steps=6 format=3 uid="uid://dniho73boedhe"]
 
-[ext_resource type="FontFile" uid="uid://bhr2rhqo8dmnd" path="res://games/game1/assets/fonts/Kenney Future.ttf" id="2_byd15"]
+[ext_resource type="FontFile" uid="uid://7hvyfi1enwgp" path="res://fonts/pressStart.ttf" id="1_blxed"]
+[ext_resource type="FontFile" uid="uid://s15272omc2m3" path="res://games/game2/assets/fonts/retro.ttf" id="2_3v6ng"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_w76kk"]
-font = ExtResource("2_byd15")
-font_size = 48
+[sub_resource type="LabelSettings" id="LabelSettings_qgo5w"]
+line_spacing = 0.0
+font = ExtResource("1_blxed")
+font_size = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gn5gr"]
+bg_color = Color(0.0952546, 0.0884222, 0.00204794, 1)
+corner_radius_top_left = 35
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
+
+[sub_resource type="LabelSettings" id="LabelSettings_ttcmc"]
+font_size = 40
 
 [node name="HUD" type="Control"]
 layout_mode = 3
@@ -18,9 +30,100 @@ grow_vertical = 2
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 23.0
+offset_left = 42.0
+offset_top = 28.0
+offset_right = -1307.0
+offset_bottom = 124.0
 grow_horizontal = 2
 text = "SCORE: 9999"
-label_settings = SubResource("LabelSettings_w76kk")
+label_settings = SubResource("LabelSettings_qgo5w")
+vertical_alignment = 1
+
+[node name="Time" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 1278.0
+offset_top = 962.0
+offset_right = -71.0
+offset_bottom = 1058.0
+grow_horizontal = 2
+text = "Time Left:"
+label_settings = SubResource("LabelSettings_qgo5w")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Instructions" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 652.0
+offset_top = 153.0
+offset_right = 1342.0
+offset_bottom = 904.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_gn5gr")
+
+[node name="Useless1" type="Label" parent="Instructions"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -281.0
+offset_top = -240.5
+offset_right = 256.0
+offset_bottom = 249.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.881937, 0.881937, 0.881937, 1)
+theme_override_font_sizes/font_size = 25
+text = "Space Shooter - How to Play
+
+Press W – Move forward.
+Press S – Move backward.
+Press A – Move left.
+Press D – Move right.
+
+Press Spacebar – Shoot enemy spaceships.
+
+Destroy all enemy spaceships!"
+horizontal_alignment = 1
+
+[node name="Useless2" type="Label" parent="Instructions"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = -335.5
+offset_right = 277.0
+offset_bottom = -281.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_3v6ng")
+theme_override_font_sizes/font_size = 30
+text = "Instructions"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartLabel" type="Label" parent="Instructions"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = 273.5
+offset_right = 301.0
+offset_bottom = 331.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_3v6ng")
+theme_override_font_sizes/font_size = 40
+text = "PRESS SPACE TO PLAY"
+label_settings = SubResource("LabelSettings_ttcmc")
 horizontal_alignment = 1
 vertical_alignment = 1

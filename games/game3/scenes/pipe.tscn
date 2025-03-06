@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cr3pl7yfk32tb"]
 
-[ext_resource type="Script" path="res://scenes/pipe.gd" id="1_i8p56"]
-[ext_resource type="Texture2D" uid="uid://den4sx3n8oo4t" path="res://assets/pipe.png" id="2_jcmtj"]
+[ext_resource type="Script" path="res://games/game3/scenes/pipe.gd" id="1_i8p56"]
+[ext_resource type="Texture2D" uid="uid://den4sx3n8oo4t" path="res://games/game3/assets/pipe.png" id="2_jcmtj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rnnky"]
 size = Vector2(78, 36)
@@ -19,6 +19,7 @@ size = Vector2(72, 524)
 size = Vector2(20, 198)
 
 [node name="Pipe" type="Area2D" groups=["pipes"]]
+scale = Vector2(2, 2)
 script = ExtResource("1_i8p56")
 
 [node name="Lower" type="Sprite2D" parent="."]

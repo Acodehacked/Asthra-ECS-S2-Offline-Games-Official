@@ -1,27 +1,182 @@
-[gd_scene load_steps=6 format=3 uid="uid://snrvq7jkapgf"]
+[gd_scene load_steps=11 format=3 uid="uid://snrvq7jkapgf"]
 
-[ext_resource type="Script" path="res://scenes/game_over.gd" id="1_36epf"]
-[ext_resource type="Texture2D" uid="uid://c57fej47adq38" path="res://assets/restart.png" id="2_e5ng7"]
+[ext_resource type="Script" path="res://games/game3/scenes/game_over.gd" id="1_36epf"]
+[ext_resource type="FontFile" uid="uid://7hvyfi1enwgp" path="res://fonts/pressStart.ttf" id="2_o4yqs"]
+[ext_resource type="LabelSettings" uid="uid://dgawcdi6iwufa" path="res://SimpleTextStyle.tres" id="3_ihy7r"]
+[ext_resource type="Texture2D" uid="uid://dslgtbyyrq1fm" path="res://buttons/HomeBtn.png" id="4_ipyy5"]
+[ext_resource type="Texture2D" uid="uid://cedghsgsx0mia" path="res://buttons/continueButton.png" id="5_5ucvy"]
+[ext_resource type="Texture2D" uid="uid://dsaar6vrxfv82" path="res://buttons/RestartButton.png" id="6_gic5w"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5q2wo"]
-texture = ExtResource("2_e5ng7")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gvlya"]
+bg_color = Color(1.54018e-06, 0.665199, 0.817739, 1)
+corner_radius_top_left = 35
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tftqu"]
-texture = ExtResource("2_e5ng7")
+[sub_resource type="LabelSettings" id="LabelSettings_mlp7c"]
+font = ExtResource("2_o4yqs")
+font_size = 45
+font_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8hnhm"]
-texture = ExtResource("2_e5ng7")
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d64x7"]
 
-[node name="GameOver" type="CanvasLayer"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b6v3t"]
+
+[node name="GameOverScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_36epf")
 
-[node name="RestartButton" type="Button" parent="."]
-offset_left = 342.0
-offset_top = 350.0
-offset_right = 502.0
-offset_bottom = 413.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_5q2wo")
-theme_override_styles/hover = SubResource("StyleBoxTexture_tftqu")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_8hnhm")
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.490196)
 
-[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -396.0
+offset_top = -225.0
+offset_right = 364.0
+offset_bottom = 203.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gvlya")
+
+[node name="GameOver" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -309.5
+offset_top = 43.0
+offset_right = 320.5
+offset_bottom = 101.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_o4yqs")
+text = "Level 3 Failed"
+label_settings = SubResource("LabelSettings_mlp7c")
+
+[node name="HighScore" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -209.0
+offset_top = -88.0
+offset_right = 207.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Hi-Score: 9999"
+label_settings = ExtResource("3_ihy7r")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -359.0
+offset_top = -8.0
+offset_right = -20.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Score: 9999"
+label_settings = ExtResource("3_ihy7r")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HighScore2" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 21.0
+offset_top = -5.0
+offset_right = 360.0
+offset_bottom = 51.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Score: 9999"
+label_settings = ExtResource("3_ihy7r")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HomeBtn" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 19.0
+offset_top = 90.0
+offset_right = 223.0
+offset_bottom = 148.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.4, 1.4)
+theme_override_fonts/font = ExtResource("2_o4yqs")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxEmpty_d64x7")
+icon = ExtResource("4_ipyy5")
+
+[node name="ContinueBtn" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = 95.0
+offset_right = 313.0
+offset_bottom = 173.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_o4yqs")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxEmpty_d64x7")
+icon = ExtResource("5_5ucvy")
+
+[node name="RestartBtn" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -271.0
+offset_top = 101.0
+offset_right = -21.0
+offset_bottom = 159.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_b6v3t")
+icon = ExtResource("6_gic5w")
+
+[connection signal="pressed" from="Panel/HomeBtn" to="." method="_on_home_btn_pressed"]
+[connection signal="pressed" from="Panel/ContinueBtn" to="." method="_on_continue_btn_pressed"]
+[connection signal="pressed" from="Panel/RestartBtn" to="." method="_on_restart_button_pressed"]

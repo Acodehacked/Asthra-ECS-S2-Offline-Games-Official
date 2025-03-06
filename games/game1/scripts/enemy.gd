@@ -3,9 +3,9 @@ class_name Enemy extends Area2D
 signal killed(points)
 signal hit
 
-@export var speed = 150
+@export var speed = 350
 @export var hp = 1
-@export var points = 100
+@export var points = 30
 
 func _physics_process(delta):
 	global_position.y += speed * delta

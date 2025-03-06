@@ -3,8 +3,8 @@ class_name Player extends CharacterBody2D
 signal laser_shot(laser_scene, location)
 signal killed
 
-@export var speed = 300
-@export var rate_of_fire := 0.25
+@export var speed = 600
+@export var rate_of_fire := 0.55
 
 @onready var muzzle = $Muzzle
 
@@ -16,7 +16,7 @@ func _process(delta):
 	if Input.is_action_pressed("shoot"):
 		if !shoot_cd:
 			shoot_cd = true
-			shoot()
+			shoot() 
 			await get_tree().create_timer(rate_of_fire).timeout
 			shoot_cd = false
 

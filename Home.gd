@@ -5,10 +5,15 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Startbtn.connect("pressed",_on_button_pressed)
-	
+	MusicManager.play_music("res://assets/bg.ogg")  # Play a specific song
 
 func _on_button_pressed():
-	get_tree().change_scene_to_file("res://loginPage.tscn")
+	var user_data = UserData.load_or_create()
+	if user_data.user_id =="":
+		get_tree().change_scene_to_file("res://loginPage.tscn")
+	else:
+		Timer_Manager.start_timer()
+		get_tree().change_scene_to_file("res://Games.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

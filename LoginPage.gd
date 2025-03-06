@@ -123,7 +123,7 @@ func anonymous_login():
 		print("Signup successful! UID: ", task.user["localid"])
 		$Label2.text = "Signup Successful!"
 	else:
-		set_error("Error in Account Creating")
+		set_error("Loading")
 	
 
 func _on_signup_succeeded(user_info):
@@ -147,6 +147,7 @@ func _on_login_failed(error):
 	print("login failed",error)#
 
 func _on_signup_failed(error):
+	set_error("Error in Account Creating")
 	print("signup failed: ", error)
 	
 func _on_login_succeeded(auth):
@@ -178,6 +179,7 @@ func save_data():
 	}
 	var document: FirestoreDocument = await collection.add(auth.localid,data)
 	if document:
+		Timer_Manager.reset_timer()
 		get_tree().change_scene_to_file("res://Games.tscn")
 	else:
 		set_error("Error in Saving Try Again!")
@@ -202,3 +204,7 @@ func is_valid_email(email: String) -> bool:
 	var regex = RegEx.new()
 	regex.compile(email_regex)
 	return regex.search(email) != null
+
+
+func _on_reset_button_pressed() -> void:
+	get_tree().reload_current_scene()

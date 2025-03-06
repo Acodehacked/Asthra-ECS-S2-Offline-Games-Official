@@ -1,0 +1,162 @@
+[gd_scene load_steps=6 format=3 uid="uid://u7tjn6f6rdwk"]
+
+[ext_resource type="FontFile" uid="uid://s15272omc2m3" path="res://games/game2/assets/fonts/retro.ttf" id="1_1jdhv"]
+[ext_resource type="Script" path="res://games/game3/scenes/hud.gd" id="1_7nrm2"]
+[ext_resource type="AudioStream" uid="uid://bmlgmu58sfcr6" path="res://games/game2/assets/sound/point.mp3" id="3_uljjx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fsr4t"]
+bg_color = Color(0.972173, 0.939028, 0.934621, 1)
+corner_radius_top_left = 35
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
+
+[sub_resource type="LabelSettings" id="LabelSettings_4h6ag"]
+font_size = 40
+font_color = Color(0, 0, 0, 1)
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_7nrm2")
+
+[node name="Useless0" type="Panel" parent="."]
+offset_left = 652.0
+offset_top = 153.0
+offset_right = 1342.0
+offset_bottom = 904.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_fsr4t")
+metadata/_edit_use_anchors_ = true
+
+[node name="Useless1" type="Label" parent="Useless0"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.488406
+anchor_top = 0.497337
+anchor_right = 0.556522
+anchor_bottom = 1.02863
+offset_left = -281.0
+offset_top = -240.5
+offset_right = 256.0
+offset_bottom = -186.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Flappy Bird - How to Play
+
+Spacebar – Make the bird flap and stay in the air.
+
+Avoid Obstacles – Fly through gaps between pipes.
+
+Don't Touch the Ground – Keep flapping to stay alive.
+
+Survive as long as you can!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Useless2" type="Label" parent="Useless0"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = -335.5
+offset_right = 277.0
+offset_bottom = -281.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.502385, 0, 0.229478, 1)
+theme_override_fonts/font = ExtResource("1_1jdhv")
+theme_override_font_sizes/font_size = 30
+text = "Instructions"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="StartLabel" type="Label" parent="Useless0"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = 273.5
+offset_right = 301.0
+offset_bottom = 331.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_1jdhv")
+theme_override_font_sizes/font_size = 40
+text = "PRESS SPACE TO PLAY"
+label_settings = SubResource("LabelSettings_4h6ag")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ScoreLabel" type="Label" parent="."]
+anchors_preset = -1
+anchor_right = 0.105556
+offset_left = 34.0
+offset_top = 17.0
+offset_right = 217.0
+offset_bottom = 71.0
+theme_override_fonts/font = ExtResource("1_1jdhv")
+theme_override_font_sizes/font_size = 40
+text = "SCORE: 0"
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TimeLabel" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = -0.138384
+offset_left = 1742.0
+offset_top = 993.0
+offset_right = 1925.0
+offset_bottom = 1047.0
+theme_override_fonts/font = ExtResource("1_1jdhv")
+theme_override_font_sizes/font_size = 30
+text = "Time Left: "
+horizontal_alignment = 2
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="UserNameLabel" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -370.0
+offset_top = 52.0
+offset_right = -27.0
+offset_bottom = 103.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("1_1jdhv")
+theme_override_font_sizes/font_size = 40
+text = "-"
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="HighScoreLabel" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -319.0
+offset_top = 22.0
+offset_right = -29.0
+offset_bottom = 53.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("1_1jdhv")
+theme_override_font_sizes/font_size = 20
+text = "user"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="PointSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_uljjx")
+volume_db = 5.843
+autoplay = true
+attenuation = 0.0544095
+max_polyphony = 8

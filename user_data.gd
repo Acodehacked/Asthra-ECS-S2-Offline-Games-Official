@@ -8,11 +8,11 @@ class_name UserData
 @export var game_2: int = 0
 @export var game_3: int = 0
 @export var game_4: int = 0
+@export var time_left: int = 1200
 
 # Set a unique resource path so it can be saved
 const SAVE_PATH = "user://user_data.tres"
 
-# Save function
 func save():
 	ResourceSaver.save(self, SAVE_PATH)
 
@@ -24,3 +24,22 @@ static func load_or_create():
 		var new_data = UserData.new()
 		new_data.save()
 		return new_data
+
+
+func logout():
+	# Remove saved user data file
+	if FileAccess.file_exists(SAVE_PATH):
+		DirAccess.remove_absolute(SAVE_PATH)
+
+	# Reset user data to default values
+	user_id = ""
+	name = ""
+	score = 0
+	game_1 = 0
+	game_2 = 0
+	game_3 = 0
+	game_4 = 0
+	time_left = 100
+	
+	# Save the reset state
+	save()

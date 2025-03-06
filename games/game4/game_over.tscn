@@ -1,7 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://cg1dgbw8swbhv"]
+[gd_scene load_steps=6 format=3 uid="uid://cg1dgbw8swbhv"]
 
 [ext_resource type="Texture2D" uid="uid://dslgtbyyrq1fm" path="res://buttons/HomeBtn.png" id="1_m0cr1"]
 [ext_resource type="FontFile" uid="uid://7hvyfi1enwgp" path="res://fonts/pressStart.ttf" id="2_vp1hj"]
+[ext_resource type="FontFile" uid="uid://s15272omc2m3" path="res://games/game2/assets/fonts/retro.ttf" id="3_bbb13"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5q1xj"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 35
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
+
+[sub_resource type="LabelSettings" id="LabelSettings_0hb8q"]
+font = ExtResource("3_bbb13")
 
 [node name="GameOver" type="Node2D"]
 
@@ -10,20 +21,21 @@ offset_left = 603.0
 offset_top = 158.0
 offset_right = 1378.0
 offset_bottom = 899.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5q1xj")
 
-[node name="HomeButton" type="Button" parent="GameOver"]
-offset_left = 216.0
-offset_top = 601.0
-offset_right = 428.0
-offset_bottom = 661.0
+[node name="HomeButton" type="Button" parent="."]
+offset_left = 819.0
+offset_top = 739.0
+offset_right = 1031.0
+offset_bottom = 799.0
 scale = Vector2(1.5, 1.5)
 icon = ExtResource("1_m0cr1")
 
-[node name="LoadingLabel" type="Label" parent="GameOver"]
-offset_left = 9.0
-offset_top = 529.0
-offset_right = 766.0
-offset_bottom = 563.0
+[node name="LoadingLabel" type="Label" parent="."]
+offset_left = 612.0
+offset_top = 687.0
+offset_right = 1369.0
+offset_bottom = 721.0
 theme_override_colors/font_color = Color(1, 0.508603, 0.833644, 1)
 theme_override_fonts/font = ExtResource("2_vp1hj")
 theme_override_font_sizes/font_size = 20
@@ -31,31 +43,44 @@ text = "Please wait, Loading"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="UserScoreLabel" type="Label" parent="GameOver"]
-offset_left = -6.0
-offset_top = 400.0
-offset_right = 751.0
-offset_bottom = 450.0
+[node name="LoadingLabel2" type="Label" parent="."]
+offset_left = 603.0
+offset_top = 853.0
+offset_right = 1360.0
+offset_bottom = 887.0
+theme_override_colors/font_color = Color(1, 0.508603, 0.833644, 1)
+theme_override_fonts/font = ExtResource("2_vp1hj")
+theme_override_font_sizes/font_size = 20
+text = "You have successfully logged out."
+label_settings = SubResource("LabelSettings_0hb8q")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="UserScoreLabel" type="Label" parent="."]
+offset_left = 597.0
+offset_top = 562.0
+offset_right = 1354.0
+offset_bottom = 612.0
 theme_override_font_sizes/font_size = 30
 text = "Total Score: 3000"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="UserTextLabel" type="Label" parent="GameOver"]
-offset_left = 111.0
-offset_top = 232.0
-offset_right = 685.0
-offset_bottom = 417.0
+[node name="UserTextLabel" type="Label" parent="."]
+offset_left = 714.0
+offset_top = 390.0
+offset_right = 1288.0
+offset_bottom = 575.0
 theme_override_font_sizes/font_size = 30
 text = "Hi Abin, Unfortunately, you are not eligible for the leaderboard. But we're glad to have you on board!"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="TitleLabel" type="Label" parent="GameOver"]
-offset_left = 3.0
-offset_top = 106.0
-offset_right = 764.0
-offset_bottom = 156.0
+[node name="TitleLabel" type="Label" parent="."]
+offset_left = 606.0
+offset_top = 264.0
+offset_right = 1367.0
+offset_bottom = 314.0
 theme_override_colors/font_color = Color(0.965536, 0.870521, 0, 1)
 theme_override_fonts/font = ExtResource("2_vp1hj")
 theme_override_font_sizes/font_size = 50

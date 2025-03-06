@@ -1,77 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://b806fg5jrllc6"]
+[gd_scene load_steps=3 format=3 uid="uid://b806fg5jrllc6"]
 
 [ext_resource type="FontFile" uid="uid://s15272omc2m3" path="res://games/game2/assets/fonts/retro.ttf" id="1_evkr0"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_ckarq"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ic0wx"]
-texture = SubResource("CanvasTexture_ckarq")
-modulate_color = Color(0, 0, 0, 0.560784)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x4ehw"]
+bg_color = Color(0.0962047, 0.0962048, 0.0962047, 1)
 
 [node name="Hud" type="Node2D"]
-
-[node name="Useless0" type="Panel" parent="."]
-offset_left = 652.0
-offset_top = 153.0
-offset_right = 1342.0
-offset_bottom = 904.0
-theme_override_styles/panel = SubResource("StyleBoxTexture_ic0wx")
-
-[node name="Useless1" type="Label" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 731.0
-offset_top = 284.0
-offset_right = 1268.0
-offset_bottom = 338.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.811285, 0.827139, 3.85046e-07, 1)
-theme_override_fonts/font = ExtResource("1_evkr0")
-theme_override_font_sizes/font_size = 20
-text = "Instructions"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Useless2" type="Label" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 731.0
-offset_top = 190.0
-offset_right = 1268.0
-offset_bottom = 244.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.811285, 0.827139, 3.85046e-07, 1)
-theme_override_fonts/font = ExtResource("1_evkr0")
-theme_override_font_sizes/font_size = 20
-text = "Instructions"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="StartLabel" type="Label" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 730.0
-offset_top = 810.0
-offset_right = 1267.0
-offset_bottom = 864.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("1_evkr0")
-theme_override_font_sizes/font_size = 40
-text = "PRESS SPACE TO PLAY"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="ScoreLabel" type="Label" parent="."]
 offset_left = 54.0
@@ -88,7 +22,7 @@ vertical_alignment = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = 1842.0
+offset_left = 1574.0
 offset_top = 55.0
 offset_right = 1922.0
 offset_bottom = 106.0
@@ -102,7 +36,7 @@ horizontal_alignment = 2
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = 1851.0
+offset_left = 1621.0
 offset_top = 25.0
 offset_right = 1931.0
 offset_bottom = 56.0
@@ -110,5 +44,77 @@ grow_horizontal = 0
 theme_override_fonts/font = ExtResource("1_evkr0")
 theme_override_font_sizes/font_size = 20
 text = "user"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Useless0" type="Panel" parent="."]
+visible = false
+offset_left = -13.0
+offset_top = -3.0
+offset_right = 1978.0
+offset_bottom = 1091.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_x4ehw")
+
+[node name="Useless1" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 313.0
+offset_top = 259.0
+offset_right = 1748.0
+offset_bottom = 839.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.809288, 0.781459, 0.771637, 1)
+theme_override_font_sizes/font_size = 40
+text = "Game Rules
+
+1. You can only attend the quiz once, so don't be over smart!
+2. Read the Code carefully.
+3. Find the Error in the given code.
+4. Check Syntax & Logic for mistakes.
+5. Pick the Correct Answer from the options.
+6. Think Efficiently – Choose the best fix.
+7. Solve atleast one bug to win the game
+
+Simple and clear! Need any changes?"
+
+[node name="Useless2" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 516.0
+offset_top = 109.0
+offset_right = 1489.0
+offset_bottom = 173.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_evkr0")
+theme_override_font_sizes/font_size = 50
+text = "Code Debugging - Instructions"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 740.0
+offset_top = 924.0
+offset_right = 1277.0
+offset_bottom = 978.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.910321, 0.664998, 3.85046e-07, 1)
+theme_override_fonts/font = ExtResource("1_evkr0")
+theme_override_font_sizes/font_size = 40
+text = "PRESS SPACE TO PLAY"
 horizontal_alignment = 1
 vertical_alignment = 1

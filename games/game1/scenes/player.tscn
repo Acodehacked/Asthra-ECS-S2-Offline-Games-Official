@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://games/game1/scripts/player.gd" id="1_pjm8b"]
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
+scale = Vector2(1.4, 1.4)
 collision_mask = 2
 motion_mode = 1
 script = ExtResource("1_pjm8b")

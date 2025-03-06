@@ -4,8 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://3cpyfbyh7kj7" path="res://games/game1/assets/textures/spaceShips_004.png" id="2_xwoqn"]
 
 [node name="DiverEnemy" instance=ExtResource("1_e8eha")]
-script = null
+scale = Vector2(2, 2)
 
 [node name="Sprite" parent="." index="0"]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_xwoqn")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0.5, -1.5)
+scale = Vector2(0.5, 0.5)

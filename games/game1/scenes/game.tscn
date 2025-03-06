@@ -1,27 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://bxuuwmlma1xmm"]
+[gd_scene load_steps=12 format=3 uid="uid://bxuuwmlma1xmm"]
 
+[ext_resource type="Script" path="res://games/game1/scripts/game.gd" id="1_8etj4"]
 [ext_resource type="PackedScene" uid="uid://ceuh25br64vvt" path="res://games/game1/scenes/player.tscn" id="2_oqgyc"]
 [ext_resource type="AudioStream" uid="uid://cyyydy05fivsp" path="res://games/game1/assets/audio/laser.ogg" id="4_8y633"]
 [ext_resource type="PackedScene" uid="uid://dniho73boedhe" path="res://games/game1/scenes/hud.tscn" id="4_pq1a5"]
 [ext_resource type="AudioStream" uid="uid://137oamlwx2hu" path="res://games/game1/assets/audio/hit.wav" id="5_f6dy0"]
 [ext_resource type="PackedScene" uid="uid://c6uejmh8c7koe" path="res://games/game1/scenes/game_over_screen.tscn" id="5_wfc6m"]
 [ext_resource type="Texture2D" uid="uid://cjqit2q27aiur" path="res://games/game1/assets/textures/purple.png" id="6_mxb3t"]
+[ext_resource type="Script" path="res://games/game1/scripts/hud.gd" id="6_ouxl0"]
 [ext_resource type="AudioStream" uid="uid://b1wymalc4ru36" path="res://games/game1/assets/audio/explode.wav" id="6_tmg8f"]
 [ext_resource type="Texture2D" uid="uid://dfgo50t0a2vci" path="res://games/game1/assets/textures/star.png" id="7_p4ya3"]
-
-[sub_resource type="GDScript" id="GDScript_kd2kb"]
-script/source = "extends Control
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-"
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_owlid"]
 particle_flag_disable_z = true
@@ -34,6 +22,7 @@ initial_velocity_max = -1000.0
 gravity = Vector3(0, 0, 0)
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_8etj4")
 
 [node name="SFX" type="Node" parent="."]
 
@@ -49,7 +38,7 @@ stream = ExtResource("6_tmg8f")
 [node name="UILayer" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="UILayer" instance=ExtResource("4_pq1a5")]
-script = SubResource("GDScript_kd2kb")
+script = ExtResource("6_ouxl0")
 
 [node name="GameOverScreen" parent="UILayer" instance=ExtResource("5_wfc6m")]
 visible = false
@@ -69,23 +58,26 @@ region_enabled = true
 region_rect = Rect2(0, 0, 540, 960)
 
 [node name="StarParticleEffect" type="GPUParticles2D" parent="."]
-position = Vector2(1011, -86)
-amount = 20
+position = Vector2(995, -152)
+amount = 40
 process_material = SubResource("ParticleProcessMaterial_owlid")
 texture = ExtResource("7_p4ya3")
 lifetime = 1.25
 preprocess = 5.0
+randomness = 1.0
+collision_base_size = 128.0
+visibility_rect = Rect2(10, -100, 100, 100)
+local_coords = true
 
 [node name="EnemySpawnTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 0.916
 autostart = true
 
 [node name="Player" parent="." instance=ExtResource("2_oqgyc")]
-position = Vector2(1006, 522)
-script = null
+position = Vector2(1089, 477)
 
 [node name="PlayerSpawnPos" type="Marker2D" parent="."]
-position = Vector2(270, 850)
+position = Vector2(1026, 761)
 
 [node name="LaserContainer" type="Node2D" parent="."]
 

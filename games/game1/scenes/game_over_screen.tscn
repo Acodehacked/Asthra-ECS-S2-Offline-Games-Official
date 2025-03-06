@@ -1,22 +1,26 @@
-[gd_scene load_steps=6 format=3 uid="uid://c6uejmh8c7koe"]
+[gd_scene load_steps=11 format=3 uid="uid://c6uejmh8c7koe"]
 
 [ext_resource type="Script" path="res://games/game1/scripts/game_over_screen.gd" id="1_g2wiu"]
-[ext_resource type="FontFile" uid="uid://bhr2rhqo8dmnd" path="res://games/game1/assets/fonts/Kenney Future.ttf" id="1_npbix"]
+[ext_resource type="FontFile" uid="uid://7hvyfi1enwgp" path="res://fonts/pressStart.ttf" id="2_avtka"]
+[ext_resource type="LabelSettings" uid="uid://dgawcdi6iwufa" path="res://SimpleTextStyle.tres" id="3_ncmla"]
+[ext_resource type="Texture2D" uid="uid://dslgtbyyrq1fm" path="res://buttons/HomeBtn.png" id="4_iyg3v"]
+[ext_resource type="Texture2D" uid="uid://cedghsgsx0mia" path="res://buttons/continueButton.png" id="5_qr58k"]
+[ext_resource type="Texture2D" uid="uid://dsaar6vrxfv82" path="res://buttons/RestartButton.png" id="5_wyn7w"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ya48v"]
-bg_color = Color(0, 0.45098, 0.6, 1)
+bg_color = Color(0.217843, 0.20348, 0.178882, 1)
 corner_radius_top_left = 25
 corner_radius_top_right = 25
 corner_radius_bottom_right = 25
 corner_radius_bottom_left = 25
 
 [sub_resource type="LabelSettings" id="LabelSettings_olfcw"]
-font = ExtResource("1_npbix")
-font_size = 52
+font = ExtResource("2_avtka")
+font_size = 45
 
-[sub_resource type="LabelSettings" id="LabelSettings_16wun"]
-font = ExtResource("1_npbix")
-font_size = 34
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d64x7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b6v3t"]
 
 [node name="GameOverScreen" type="Control"]
 layout_mode = 3
@@ -43,10 +47,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -221.0
-offset_top = -228.0
-offset_right = 221.0
-offset_bottom = 101.0
+offset_left = -396.0
+offset_top = -225.0
+offset_right = 364.0
+offset_bottom = 203.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ya48v")
@@ -56,12 +60,13 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -185.0
-offset_top = 36.0
-offset_right = 185.0
-offset_bottom = 98.0
+offset_left = -309.5
+offset_top = 43.0
+offset_right = 320.5
+offset_bottom = 101.0
 grow_horizontal = 2
-text = "Game Over"
+theme_override_fonts/font = ExtResource("2_avtka")
+text = "Level 1 Failed"
 label_settings = SubResource("LabelSettings_olfcw")
 
 [node name="HighScore" type="Label" parent="Panel"]
@@ -71,14 +76,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -169.5
-offset_top = -61.5
-offset_right = 169.5
-offset_bottom = -5.5
+offset_left = -169.0
+offset_top = -88.0
+offset_right = 173.0
+offset_bottom = -32.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Hi-Score: 9999"
-label_settings = SubResource("LabelSettings_16wun")
+label_settings = ExtResource("3_ncmla")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -89,32 +94,88 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -169.5
-offset_top = -14.5
-offset_right = 169.5
-offset_bottom = 41.5
+offset_left = -359.0
+offset_top = -8.0
+offset_right = -20.0
+offset_bottom = 48.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Score: 9999"
-label_settings = SubResource("LabelSettings_16wun")
+label_settings = ExtResource("3_ncmla")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="RestartButton" type="Button" parent="Panel"]
+[node name="HighScore2" type="Label" parent="Panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -125.0
-offset_top = 58.5
-offset_right = 125.0
-offset_bottom = 116.5
+offset_left = 21.0
+offset_top = -5.0
+offset_right = 360.0
+offset_bottom = 51.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("1_npbix")
-theme_override_font_sizes/font_size = 35
-text = "RETRY"
+text = "Score: 9999"
+label_settings = ExtResource("3_ncmla")
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[connection signal="pressed" from="Panel/RestartButton" to="." method="_on_restart_button_pressed"]
+[node name="HomeBtn" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 19.0
+offset_top = 90.0
+offset_right = 223.0
+offset_bottom = 148.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.4, 1.4)
+theme_override_fonts/font = ExtResource("2_avtka")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxEmpty_d64x7")
+icon = ExtResource("4_iyg3v")
+
+[node name="ContinueBtn" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = 95.0
+offset_right = 313.0
+offset_bottom = 173.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_avtka")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxEmpty_d64x7")
+icon = ExtResource("5_qr58k")
+
+[node name="RestartBtn" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -271.0
+offset_top = 101.0
+offset_right = -21.0
+offset_bottom = 159.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_b6v3t")
+icon = ExtResource("5_wyn7w")
+
+[connection signal="pressed" from="Panel/HomeBtn" to="." method="_on_home_btn_pressed"]
+[connection signal="pressed" from="Panel/ContinueBtn" to="." method="_on_continue_btn_pressed"]
+[connection signal="pressed" from="Panel/RestartBtn" to="." method="_on_restart_button_pressed"]

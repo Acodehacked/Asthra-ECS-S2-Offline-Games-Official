@@ -1,0 +1,117 @@
+[gd_scene load_steps=8 format=3 uid="uid://dprsjl7vg03gq"]
+
+[ext_resource type="Script" path="res://scenes/Instructions.gd" id="1_vw476"]
+[ext_resource type="FontFile" uid="uid://7hvyfi1enwgp" path="res://fonts/pressStart.ttf" id="2_d1d03"]
+[ext_resource type="Texture2D" uid="uid://dslgtbyyrq1fm" path="res://buttons/HomeBtn.png" id="4_iss7t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ya48v"]
+bg_color = Color(0.217843, 0.20348, 0.178882, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_olfcw"]
+font = ExtResource("2_d1d03")
+font_size = 45
+
+[sub_resource type="LabelSettings" id="LabelSettings_xkulk"]
+line_spacing = 10.0
+font_size = 35
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d64x7"]
+
+[node name="Instructions" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vw476")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.490196)
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -899.0
+offset_top = -482.0
+offset_right = 910.0
+offset_bottom = 472.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ya48v")
+
+[node name="GameOver" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -309.5
+offset_top = 43.0
+offset_right = 320.5
+offset_bottom = 101.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_d1d03")
+text = "General Instructions"
+label_settings = SubResource("LabelSettings_olfcw")
+
+[node name="HighScore" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -826.5
+offset_top = -357.0
+offset_right = 846.5
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "1. Understand the Controls – Each game has unique controls. Read them carefully before starting.
+2. Avoid Obstacles & Enemies – Stay alert and react quickly to dodge or defeat challenges.
+3. Score maximum at each level, you don't have any limit (excluded level 4)
+4. Score & Survive – The goal is to achieve the highest score or survive as long as possible.
+5. Follow the Rules – Pay attention to game mechanics, and use the best strategies to win.
+6. Think & React Fast – Whether it’s solving errors, shooting enemies, or dodging obstacles, quick thinking is key.
+7. Complete all the games before time runs out to earn rewards!
+
+Level 2: 750 points,  Level 3: 1000 points, Level 4: 50 points"
+label_settings = SubResource("LabelSettings_xkulk")
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="HomeBtn" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -126.5
+offset_top = 374.0
+offset_right = 77.5
+offset_bottom = 432.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.4, 1.4)
+theme_override_fonts/font = ExtResource("2_d1d03")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxEmpty_d64x7")
+icon = ExtResource("4_iss7t")
+
+[connection signal="pressed" from="HomeBtn" to="." method="_on_home_btn_pressed"]

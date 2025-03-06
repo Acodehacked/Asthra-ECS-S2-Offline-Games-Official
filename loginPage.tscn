@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://blfiofmjg1yq7"]
+[gd_scene load_steps=10 format=3 uid="uid://blfiofmjg1yq7"]
 
 [ext_resource type="Script" path="res://LoginPage.gd" id="1_5vegv"]
 [ext_resource type="Texture2D" uid="uid://pw6ochxwgd5b" path="res://bg/backgroundLogin.png" id="2_btp3l"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://co0abyqn11vxn" path="res://icons/astra.png" id="4_iqu60"]
 [ext_resource type="Texture2D" uid="uid://d1yqdmu1wdsqq" path="res://icons/home text.png" id="5_j44x5"]
 [ext_resource type="Texture2D" uid="uid://bnkceml4cv28v" path="res://buttons/Startbutton.png" id="6_jsaq2"]
+[ext_resource type="Texture2D" uid="uid://dsaar6vrxfv82" path="res://buttons/RestartButton.png" id="7_f6p6f"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_me40b"]
 
@@ -137,6 +138,15 @@ offset_right = 1189.0
 offset_bottom = 955.65
 icon = ExtResource("6_jsaq2")
 
+[node name="ResetButton" type="Button" parent="."]
+layout_mode = 2
+offset_left = 1756.0
+offset_top = 967.078
+offset_right = 2071.0
+offset_bottom = 1052.08
+scale = Vector2(0.5, 0.5)
+icon = ExtResource("7_f6p6f")
+
 [node name="Label2" type="Label" parent="."]
 layout_mode = 2
 offset_left = 81.0
@@ -189,3 +199,5 @@ theme_override_colors/font_color = Color(0.83922, 0.471162, 0.0198347, 1)
 theme_override_fonts/font = ExtResource("3_4gwvp")
 theme_override_font_sizes/font_size = 18
 text = "Network error occured!"
+
+[connection signal="pressed" from="ResetButton" to="." method="_on_reset_button_pressed"]

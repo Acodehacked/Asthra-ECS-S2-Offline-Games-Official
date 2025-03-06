@@ -1,6 +1,5 @@
-[gd_scene load_steps=11 format=3 uid="uid://db3pw5cil1qs5"]
+[gd_scene load_steps=18 format=3 uid="uid://db3pw5cil1qs5"]
 
-[ext_resource type="Texture2D" uid="uid://dslgtbyyrq1fm" path="res://buttons/HomeBtn.png" id="1_d55it"]
 [ext_resource type="Texture2D" uid="uid://pw6ochxwgd5b" path="res://bg/backgroundLogin.png" id="1_ktxuu"]
 [ext_resource type="Script" path="res://games.gd" id="1_xq07k"]
 [ext_resource type="FontFile" uid="uid://7hvyfi1enwgp" path="res://fonts/pressStart.ttf" id="4_aho58"]
@@ -10,6 +9,16 @@
 [ext_resource type="Texture2D" uid="uid://crppwiy2i5umj" path="res://buttons/game_1.png" id="8_gvyjs"]
 [ext_resource type="Texture2D" uid="uid://dkk2ptc7i8qmg" path="res://buttons/pointIcon.png" id="9_bbrxv"]
 [ext_resource type="Texture2D" uid="uid://dre452ovrllai" path="res://buttons/LockedButton.png" id="10_aj336"]
+[ext_resource type="Texture2D" uid="uid://dttddu2r7l64d" path="res://buttons/closeImage.png" id="10_m1awx"]
+[ext_resource type="Texture2D" uid="uid://ykcp3oo1j6oy" path="res://buttons/InstrBtn.png" id="11_to8db"]
+[ext_resource type="PackedScene" uid="uid://v6a0lg2i5wkk" path="res://scenes/CompleteLevel.tscn" id="12_j3v06"]
+[ext_resource type="PackedScene" uid="uid://dprsjl7vg03gq" path="res://scenes/Instructions.tscn" id="13_gsbek"]
+[ext_resource type="AudioStream" uid="uid://bjulfes0bsx5y" path="res://games/game2/assets/sound/die.mp3" id="13_q4u6g"]
+[ext_resource type="PackedScene" uid="uid://op465er3vmhe" path="res://scenes/Logout.tscn" id="13_tdw30"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_am6by"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_awwh5"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -26,30 +35,34 @@ position = Vector2(993.083, 535.75)
 scale = Vector2(1.11102, 1.03935)
 texture = ExtResource("1_ktxuu")
 
-[node name="HomeButton" type="Button" parent="."]
+[node name="UserTotalScore" type="Label" parent="."]
 layout_mode = 0
-offset_left = 81.0
-offset_top = 977.0
-offset_right = 293.0
-offset_bottom = 1037.0
-icon = ExtResource("1_d55it")
-
-[node name="UserTitle2" type="Label" parent="."]
-offset_left = 139.0
-offset_top = 36.0
-offset_right = 359.0
-offset_bottom = 60.0
+offset_left = 162.0
+offset_top = 52.0
+offset_right = 769.0
+offset_bottom = 76.0
 theme_override_fonts/font = ExtResource("4_aho58")
 theme_override_font_sizes/font_size = 20
-text = "Total Score
-"
+text = "Total Score: "
+
+[node name="UserTotalScore2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 922.0
+offset_top = 1013.0
+offset_right = 1942.0
+offset_bottom = 1055.0
+theme_override_colors/font_color = Color(0.605274, 0.605274, 0.605274, 1)
+theme_override_font_sizes/font_size = 20
+text = "Finish all the games before time runs out, or you won't get the reward!"
 horizontal_alignment = 2
+vertical_alignment = 2
 
 [node name="TimeLeftLabel" type="Label" parent="."]
-offset_left = 1597.0
-offset_top = 1031.0
-offset_right = 1817.0
-offset_bottom = 1058.0
+layout_mode = 0
+offset_left = 1584.0
+offset_top = 968.0
+offset_right = 1804.0
+offset_bottom = 995.0
 theme_override_fonts/font = ExtResource("4_aho58")
 theme_override_font_sizes/font_size = 20
 text = "Tme Left : "
@@ -57,10 +70,10 @@ horizontal_alignment = 2
 
 [node name="UserTitle" type="Label" parent="."]
 layout_mode = 0
-offset_left = 1740.0
-offset_top = 33.0
-offset_right = 1960.0
-offset_bottom = 57.0
+offset_left = 1615.0
+offset_top = 61.0
+offset_right = 1835.0
+offset_bottom = 85.0
 theme_override_fonts/font = ExtResource("4_aho58")
 theme_override_font_sizes/font_size = 20
 text = "ABIN ANTONY"
@@ -68,59 +81,102 @@ horizontal_alignment = 2
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 1869.0
-offset_top = 16.0
-offset_right = 2049.0
-offset_bottom = 43.0
+offset_left = 1735.0
+offset_top = 44.0
+offset_right = 1834.0
+offset_bottom = 71.0
 theme_override_fonts/font = ExtResource("4_aho58")
 theme_override_font_sizes/font_size = 10
 text = "LOGGED IN"
+horizontal_alignment = 2
 
 [node name="PointIcon" type="Sprite2D" parent="."]
-position = Vector2(88, 43)
+position = Vector2(104, 59)
 texture = ExtResource("9_bbrxv")
 
 [node name="Game4Button" type="Button" parent="."]
-offset_left = 1462.0
-offset_top = 258.0
-offset_right = 1817.0
-offset_bottom = 703.0
+layout_mode = 0
+offset_left = 1477.0
+offset_top = 273.0
+offset_right = 1832.0
+offset_bottom = 718.0
 icon = ExtResource("5_d3ob8")
 
+[node name="LogoutBtn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1867.0
+offset_top = 14.0
+offset_right = 1948.0
+offset_bottom = 103.0
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_am6by")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_awwh5")
+icon = ExtResource("10_m1awx")
+
 [node name="Game3Button" type="Button" parent="."]
-offset_left = 1028.0
-offset_top = 260.0
-offset_right = 1383.0
-offset_bottom = 705.0
+layout_mode = 0
+offset_left = 1043.0
+offset_top = 275.0
+offset_right = 1398.0
+offset_bottom = 720.0
 icon = ExtResource("7_bcq17")
 
 [node name="Game2Button" type="Button" parent="."]
-offset_left = 577.0
-offset_top = 262.0
-offset_right = 932.0
-offset_bottom = 707.0
+layout_mode = 0
+offset_left = 592.0
+offset_top = 277.0
+offset_right = 947.0
+offset_bottom = 722.0
 icon = ExtResource("6_ti2ig")
 
 [node name="Game1Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 142.0
-offset_top = 262.0
-offset_right = 497.0
-offset_bottom = 707.0
+offset_left = 157.0
+offset_top = 277.0
+offset_right = 512.0
+offset_bottom = 722.0
 icon = ExtResource("8_gvyjs")
 
 [node name="LockedButton3" type="Sprite2D" parent="."]
-position = Vector2(1738, 287)
+position = Vector2(1753, 302)
 texture = ExtResource("10_aj336")
 
 [node name="LockedButton2" type="Sprite2D" parent="."]
-position = Vector2(1300, 295)
+position = Vector2(1315, 310)
 texture = ExtResource("10_aj336")
 
 [node name="LockedButton1" type="Sprite2D" parent="."]
-position = Vector2(859, 293)
+position = Vector2(874, 308)
 texture = ExtResource("10_aj336")
 
-[connection signal="pressed" from="HomeButton" to="." method="_on_home_button_pressed"]
-[connection signal="ready" from="HomeButton" to="." method="_on_button_ready"]
+[node name="InstructionsButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 957.0
+offset_right = 376.0
+offset_bottom = 1042.0
+icon = ExtResource("11_to8db")
+
+[node name="CompleteLevel" parent="." instance=ExtResource("12_j3v06")]
+visible = false
+
+[node name="Instructions" parent="." instance=ExtResource("13_gsbek")]
+visible = false
+z_index = 2
+layout_mode = 1
+
+[node name="Logout" parent="." instance=ExtResource("13_tdw30")]
+visible = false
+
+[node name="dieSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_q4u6g")
+volume_db = 24.0
+pitch_scale = 0.92
+max_distance = 3995.0
+max_polyphony = 6
+
+[connection signal="pressed" from="Game4Button" to="." method="_on_game_4_button_pressed"]
+[connection signal="pressed" from="LogoutBtn" to="." method="_on_logout_btn_pressed"]
+[connection signal="pressed" from="Game3Button" to="." method="_on_game_3_button_pressed"]
+[connection signal="pressed" from="Game2Button" to="." method="_on_game_2_button_pressed"]
 [connection signal="pressed" from="Game1Button" to="." method="_on_game_1_button_pressed"]
+[connection signal="pressed" from="InstructionsButton" to="." method="_on_instructions_button_pressed"]
