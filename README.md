@@ -19,4 +19,4 @@ Official Version is not released yet!
 -  Abin Antony @Acodehacked
 -  Dennis Sabu @DennisSabu
 
-2025 February all rights reserved.
+2025 February.
